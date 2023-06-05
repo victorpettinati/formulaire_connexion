@@ -96,11 +96,6 @@ if (isset($_POST['forminscription'])) {
             </td>
         </table>
     </form>
-    <?php
-    if (isset($erreur)) {
-        echo $erreur;
-    }
-    ?>
 
 </body>
 

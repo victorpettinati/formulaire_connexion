@@ -37,11 +37,27 @@ if (isset($_POST['formconnexion'])) {
         <p><?php echo $erreur; ?></p>
     <?php } ?>
     <form method="POST" action="">
-        <label for="login">Login :</label>
-        <input type="text" id="login" name="login" required><br><br>
-        <label for="mot_de_passe">Mot de passe :</label>
-        <input type="password" id="mot_de_passe" name="mot_de_passe" required><br><br>
-        <input type="submit" name="formconnexion" value="Se connecter">
+        <table>
+            <tr>
+                <td>
+                    <label for="login">Login :</label>
+                </td>
+                <td>
+                    <input type="text" id="login" name="login" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="mot_de_passe">Mot de passe :</label>
+                </td>
+                <td>
+                    <input type="password" id="mot_de_passe" name="mot_de_passe" required>
+                </td>
+            </tr>
+            <td>
+                    <input type="submit" name="formconnexion" value="Se connecter">
+            </td>
+        </table>
     </form>
 </body>
 </html>

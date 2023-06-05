@@ -92,7 +92,7 @@ if (isset($_POST['forminscription'])) {
                 </td>
             </tr>
             <td>
-                <input type="submit" name="forminscription" value="S'inscrire"> <a href="connexion.php">Déjà inscrit ?
+                    <input type="submit" name="forminscription" value="S'inscrire"> <a href="connexion.php">Déjà inscrit ?
             </td>
         </table>
     </form>

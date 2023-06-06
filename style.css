@@ -1,0 +1,78 @@
+*, *::before, *::after {
+    box-sizing: border-box; 
+  }
+  
+  body {
+    background-color: rgb(44, 44, 41);
+    margin: 0;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  
+  h1 {
+    margin: 0 0 30px 0;
+    padding: 20px;
+    background-color: rgba(20,20,20,0.9);
+    color: #fff;
+    text-align: center;
+    font-family: Arial;
+    text-transform: uppercase;
+    box-shadow: 0 0 20px -1px #efefef;
+  }
+  
+  .carousel_wrapper {
+    position: relative;
+    width: 320px;
+    margin: 100px auto 0 auto;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+  }
+  
+  .carousel {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: rotateY(-360deg) translateZ(-412px); 
+    animation: swirl 40s steps(10000, end) infinite; 
+  }
+  
+  .slide {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 300px;
+    height: 187px;
+  }
+  
+  .slide img {
+    width: 280px;
+    height: 175px;
+    border: 3px inset rgba(20, 19, 19, 0.75);
+    box-shadow: 0 0 15px 3px rgba(255, 255, 255, 0.9);
+  }
+  
+ 
+  .slide.one {
+    transform: rotateY(0deg) translateZ(412px);
+  }
+  .slide.two {
+    transform: rotateY(90deg) translateZ(412px);
+  }
+  .slide.three {
+    transform: rotateY(180deg) translateZ(412px);
+  }
+  .slide.four {
+    transform: rotateY(270deg) translateZ(412px);
+  }
+
+  
+  @keyframes swirl {   
+    from {
+      transform: rotateY(-360deg);
+    }
+    to {
+      transform: rotateY(0deg);
+    }
+  } 
+

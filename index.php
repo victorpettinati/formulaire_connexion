@@ -25,8 +25,7 @@
     <div class="slide four">
         <a href="connexion.php"><img src="black2.jpg" />
     </div>
-<!-- / .carousel -->
-</div><!-- / .carousel_wrapper -->
+</div>
 
 
     

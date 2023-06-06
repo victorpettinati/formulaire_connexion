@@ -20,28 +20,38 @@ if (isset($_POST['formprofil'])) {
         $prenom = htmlspecialchars($_POST['prenom']);
         $nom = htmlspecialchars($_POST['nom']);
 
-        $nouveau_mot_de_passe = $_POST['nouveau_mot_de_passe'];
-        $confirmer_mot_de_passe = $_POST['confirmer_mot_de_passe'];
+        // Vérifie si le nouveau login existe déjà dans la base de données
+        $req_login_exist = $bdd->prepare("SELECT * FROM utilisateurs WHERE login = ? AND id != ?");
+        $req_login_exist->execute(array($login, $user['id']));
+        $login_exist = $req_login_exist->fetch();
 
-        if ($nouveau_mot_de_passe === $confirmer_mot_de_passe) {
-            // Met à jour les informations de l'utilisateur dans la base de données
-            $update = $bdd->prepare("UPDATE utilisateurs SET login = ?, prenom = ?, nom = ? WHERE id = ?");
-            $update->execute(array($login, $prenom, $nom, $user['id']));
-
-            // Met à jour le mot de passe si un nouveau mot de passe est fourni
-            if (!empty($nouveau_mot_de_passe)) {
-                $nouveau_mot_de_passe_hash = sha1($nouveau_mot_de_passe);
-                $update_password = $bdd->prepare("UPDATE utilisateurs SET password = ? WHERE id = ?");
-                $update_password->execute(array($nouveau_mot_de_passe_hash, $user['id']));
-            }
-
-            // Met à jour les informations dans la session
-            $_SESSION['login'] = $login;
-            $_SESSION['prenom'] = $prenom;
-
-            $message = "Profil mis à jour avec succès.";
+        if ($login_exist) {
+            // Le nouveau login existe déjà
+            $erreur = "Le login existe déjà.";
         } else {
-            $erreur = "Les nouveaux mots de passe ne correspondent pas.";
+            $nouveau_mot_de_passe = $_POST['nouveau_mot_de_passe'];
+            $confirmer_mot_de_passe = $_POST['confirmer_mot_de_passe'];
+
+            if ($nouveau_mot_de_passe === $confirmer_mot_de_passe) {
+                // Met à jour les informations de l'utilisateur dans la base de données
+                $update = $bdd->prepare("UPDATE utilisateurs SET login = ?, prenom = ?, nom = ? WHERE id = ?");
+                $update->execute(array($login, $prenom, $nom, $user['id']));
+
+                // Met à jour le mot de passe si un nouveau mot de passe est fourni
+                if (!empty($nouveau_mot_de_passe)) {
+                    $nouveau_mot_de_passe_hash = sha1($nouveau_mot_de_passe);
+                    $update_password = $bdd->prepare("UPDATE utilisateurs SET password = ? WHERE id = ?");
+                    $update_password->execute(array($nouveau_mot_de_passe_hash, $user['id']));
+                }
+
+                // Met à jour les informations dans la session
+                $_SESSION['login'] = $login;
+                $_SESSION['prenom'] = $prenom;
+
+                $message = "Profil mis à jour avec succès.";
+            } else {
+                $erreur = "Les nouveaux mots de passe ne correspondent pas.";
+            }
         }
     } else {
         $erreur = "Veuillez remplir tous les champs.";

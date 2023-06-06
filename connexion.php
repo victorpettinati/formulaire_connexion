@@ -13,10 +13,15 @@ if (isset($_POST['formconnexion'])) {
         $user = $req->fetch();
 
         if ($user) {
-            $_SESSION['login'] = $user['login'];
-            $_SESSION['prenom'] = $user['prenom'];
-            header("Location: profil.php");
-            exit();
+            if ($login === 'admin' && $password === sha1('admin')) {
+                header("Location: admin.php");
+                exit();
+            } else {
+                $_SESSION['login'] = $user['login'];
+                $_SESSION['prenom'] = $user['prenom'];
+                header("Location: profil.php");
+                exit();
+            }
         } else {
             $erreur = "Identifiant ou mot de passe incorrect.";
         }
@@ -24,6 +29,7 @@ if (isset($_POST['formconnexion'])) {
         $erreur = "Veuillez remplir tous les champs.";
     }
 }
+
 ?>
 
 <!DOCTYPE html>

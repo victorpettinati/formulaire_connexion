@@ -16,6 +16,9 @@
 <div class="container">                                                                 
         <div class="text-frame">
 <?php
+
+session_start();
+
 $serveur = 'localhost';
 $nomUtilisateur = 'root';
 $motDePasse = 'Laplateforme.06!';

@@ -43,59 +43,64 @@ if (isset($_POST['forminscription'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Inscription</title>
 </head>
 
 <body>
-    <h2>Inscription</h2>
-    <form action="" method="POST">
-        <table>
-            <tr>
-                <td>
-                    <label for="login">Login:</label>
-                </td>
-                <td>
-                    <input type="text" placeholder="Login" id="login" name="login" required>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="prenom">Prenom:</label>
-                </td>
-                <td>
-                    <input type="text" placeholder="Prenom" id="prenom" name="prenom" required>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="nom">Nom:</label>
-                </td>
-                <td>
-                    <input type="text" placeholder="Nom" id="nom" name="nom" required>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="mot_de_passe">Mot de passe:</label>
-                </td>
-                <td>
-                    <input type="password" placeholder="Mot de passe" id="mot_de_passe" name="mot_de_passe" required>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="mot_de_passe2">Confirmation mot de passe:</label>
-                </td>
-                <td>
-                    <input type="password" placeholder="Confirmation mot de passe" id="mot_de_passe2"
-                        name="mot_de_passe2" required>
-                </td>
-            </tr>
-            <td>
-                    <input type="submit" name="forminscription" value="S'inscrire"> <a href="connexion.php">Déjà inscrit ?
-            </td>
-        </table>
-    </form>
+    <h1><a href="index.php">Inscription</a></h1>
+    <div class="container">                                                                 
+        <div class="text-frame">
+                        <form action="" method="POST">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <label for="login">Login:</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" placeholder="Login" id="login" name="login" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="prenom">Prenom:</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" placeholder="Prenom" id="prenom" name="prenom" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="nom">Nom:</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" placeholder="Nom" id="nom" name="nom" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="mot_de_passe">Mot de passe:</label>
+                                    </td>
+                                    <td>
+                                        <input type="password" placeholder="Mot de passe" id="mot_de_passe" name="mot_de_passe" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="mot_de_passe2">Confirmation mot de passe:</label>
+                                    </td>
+                                    <td>
+                                        <input type="password" placeholder="Confirmation mot de passe" id="mot_de_passe2"
+                                            name="mot_de_passe2" required>
+                                    </td>
+                                </tr>
+                                <td>
+                                        <input type="submit" name="forminscription" value="S'inscrire"> <a href="connexion.php">Déjà inscrit ?
+                                </td>
+                            </table>
+                        </form>
+        </div>
+    </div>
     <?php
     if (isset($erreur)) {
         echo $erreur;

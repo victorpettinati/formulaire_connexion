@@ -78,3 +78,58 @@
     }
   } 
 
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+  }
+
+  .text-frame {
+    background-color: #4b4a46de;
+    border: none; /* Couleur et épaisseur de la bordure du cadre */
+    border-style: none;
+    border-radius: 0.2rem;
+    padding: 50px; /* Espace entre la bordure et le texte */
+    margin: 10px; /* Espace autour du cadre */
+    width: absolute; /* Largeur du cadre */
+    height: auto; /* Hauteur du cadre, ajustée automatiquement en fonction du contenu */
+    box-shadow: 5px 5px 10px rgb(0, 0, 0); /* X-offset, Y-offset, blur, couleur */
+    background-image: linear-gradient( #d5d3cdde, rgba(108, 102, 102, 0.582));
+    position: center;
+    font-family: Arial, Helvetica, sans-serif;
+  
+  
+  }
+
+  .text-frame input[type="submit"] {
+    margin-top: 10px;
+    background-color: #373535;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+  }
+  
+  .text-frame input[type="submit"]:hover {
+    background-color: #000000;
+  }
+
+  .text-frame a {
+    /* Autres styles du lien */
+    display: block; /* Afficher le lien en tant que bloc */
+    margin-top: 20px; /* Ajouter une marge supérieure */
+    text-decoration:underline;
+    color:rgb(0, 0, 0)
+  }
+
+  a {
+    text-decoration: none;
+    color: #efefef;
+  }
+  
+

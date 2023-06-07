@@ -62,63 +62,71 @@ if (isset($_POST['formprofil'])) {
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Profil</title>
 </head>
 <body>
-    <h2>Profil</h2>
-    <?php if (isset($message)) { ?>
-        <p><?php echo $message; ?></p>
-    <?php } ?>
-    <?php if (isset($erreur)) { ?>
-        <p><?php echo $erreur; ?></p>
-    <?php } ?>
-    <form method="POST" action="">
-        <table>
-            <tr>
-                <td>
-                    <label for="login">Login :</label>
-                </td>
-                <td>
-                    <input type="text" id="login" name="login" value="<?php echo $user['login']; ?>" required>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="prenom">Prénom :</label>
-                </td>
-                <td>
-                    <input type="text" id="prenom" name="prenom" value="<?php echo $user['prenom']; ?>" required>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="nom">Nom :</label>
-                </td>
-                <td>
-                    <input type="text" id="nom" name="nom" value="<?php echo $user['nom']; ?>" required>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="nouveau_mot_de_passe">Nouveau mot de passe :</label>
-                </td>
-                <td>
-                    <input type="password" id="nouveau_mot_de_passe" name="nouveau_mot_de_passe">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="confirmer_mot_de_passe">Confirmer le nouveau mot de passe :</label>
-                </td>
-                <td>
-                    <input type="password" id="confirmer_mot_de_passe" name="confirmer_mot_de_passe">
-                </td>
-            </tr>
-                <td>
-                    <input type="submit" name="formprofil" value="Modifier">
-                </td>
-        </table>
-    </form>
+    <h1>Profil</h1>
+                                                            <?php if (isset($message)) { ?>
+                                                                <p><?php echo $message; ?></p>
+                                                            <?php } ?>
+                                                            <?php if (isset($erreur)) { ?>
+                                                                <p><?php echo $erreur; ?></p>
+                                                            <?php } ?>
+    <div class="container">                                                                 
+        <div class="text-frame">
+            <form method="POST" action="">
+                <table>
+                    <tr>
+                        <td>
+                            <label for="login">Login :</label>
+                        </td>
+                        <td>
+                            <input type="text" id="login" name="login" value="<?php echo $user['login']; ?>" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="prenom">Prénom :</label>
+                        </td>
+                        <td>
+                            <input type="text" id="prenom" name="prenom" value="<?php echo $user['prenom']; ?>" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="nom">Nom :</label>
+                        </td>
+                        <td>
+                            <input type="text" id="nom" name="nom" value="<?php echo $user['nom']; ?>" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="nouveau_mot_de_passe">Nouveau mot de passe :</label>
+                        </td>
+                        <td>
+                            <input type="password" placeholder="Nouveau mot de passe" id="nouveau_mot_de_passe" name="nouveau_mot_de_passe">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="confirmer_mot_de_passe">Confirmer le nouveau mot de passe :</label>
+                        </td>
+                        <td>
+                            <input type="password" placeholder="Confirmer le nouveau mot de passe" id="confirmer_mot_de_passe" name="confirmer_mot_de_passe">
+                        </td>
+                    </tr>
+                        <td>
+                            <input type="submit" name="formprofil" value="Modifier"><a href="deconnexion.php">Déconnexion</a>
+                        </td>
+                </table>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
 

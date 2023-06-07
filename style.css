@@ -117,6 +117,7 @@
   
   .text-frame input[type="submit"]:hover {
     background-color: #000000;
+    cursor:pointer;
   }
 
   .text-frame a {
